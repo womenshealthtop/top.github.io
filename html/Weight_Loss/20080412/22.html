@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title> Forever Young_我的网站</title>
+<meta name="keywords" content="" />
+<meta name="description" content="All of us want to have longer and improved lives, and while some of us are dealt a better hand than others in lifes genetic risk, there are many habits we can enlarge the expected we are natural with. People who age successfully are not just luckyCt" />
+<link href="/templets/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+	}
+	function checkSubmit(){
+		if(document.feedback.msg.value!='') document.feedback.submit();
+		else alert("评论内容不能为空！");
+	}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+-->
+</script>
+</head>
+<body class="articleview">
+<div class="header">
+    <div class="top w960 center">
+      <div class="title">
+        <h1> <a href="http://127.0.0.1">我的网站</a> </h1>
+      </div>
+      <!-- /title -->
+      <div class="banner"><a href="http://www.dedecms.com/"><img src="/templets/images/banner-header.png" /></a>
+</div>
+      <!-- /banner -->
+      <div class="rlink">
+        <ul>
+          <li class="r1"><a href="/member">会员中心</a></li>
+          <li class="r2"><a href="/tags.php">TAG标签</a></li>
+          <li class="r3"><a href="/data/sitemap.html">网站地图</a></li>
+          <li class="r4"><a href="/data/rssmap.html">RSS订阅</a></li>
+        </ul>
+      </div>
+      <!-- /banner -->
+    </div>
+    <!-- /top -->
+    <div class="nav mt1">
+      <div class="w960 center">
+        <ul>
+          <li><a href='/'>主页</a></li>
+          <li class='thisclass'><a href='/html/Weight_Loss/'>Weight Loss</a> </li>
+          <li><a href='/html/Beauty/'>Beauty</a></li>
+          <li><a href='/html/Diet___Fitness/'>Diet & Fitness</a></li>
+          <li><a href='/html/Food_and_Nutrition/'>Food and Nutrition</a></li>
+          <li><a href='/html/Healthy_Living/'>Healthy Living</a></li>
+          <li><a href='/html/Mental_Health/'>Mental Health</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- /nav -->
+    <div class="search">
+      <div class="w960 center">
+      <form action="/plus/search.php" name="formsearch">
+        <div class="form">
+          <h4>搜索</h4>
+           <input type="hidden" name="kwtype" value="0" />
+           <input name="keyword" type="text" class="search-keyword" id="search-keyword" />
+           <select name="searchtype" class="search-option" id="search-option">
+               <option value="titlekeyword" selected='1'>智能模糊搜索</option>
+               <option value="title">仅搜索标题</option>
+           </select>
+          <button type="submit" class="search-submit">搜索</button>
+        </div>
+        </form>
+        <!-- /form -->
+        <div class="tags">
+          <h4>热门标签</h4>
+          <ul>
+          
+          </ul>
+        </div>
+        <!-- /tags -->
+      </div>
+    </div>
+    <!-- /search -->
+  </div>
+<!-- /header -->
+<!-- /header -->
+
+<div class="channel-nav w960 center clear">
+	<ul>
+              
+	</ul>
+	<span class="back">
+		<a href="/">返回首页</a>
+	</span>
+</div><!-- /channel-nav -->
+
+<div class="w960 center clear mt1">
+	<div class="pleft">
+		<div class="place">
+			<strong>当前位置:</strong> <a href='http://127.0.0.1/'>主页</a> > <a href='/html/Weight_Loss/'>Weight Loss</a> > 
+		</div><!-- /place -->
+		<div class="viewbox">
+			<div class="title">
+				<h2> Forever Young</h2>
+			</div><!-- /title -->
+			<div class="info">
+				<small>时间:</small>2008-04-12 00:28<small>来源:</small> <small>作者:</small> <small>点击:</small><script src="/plus/count.php?view=yes&aid=22&mid=1" type='text/javascript' language="javascript"></script>次</div><!-- /info -->
+
+            	<div class="intro">All of us want to have longer and improved lives, and while some of us are dealt a better hand than others in lifes genetic risk, there are many habits we can enlarge the expected we are natural with. People who age successfully are not just luckyCt</div>
+			<div class="content">
+			　　<p>All of us want to have longer and improved lives, and while some of us are dealt a better hand than others in lifes genetic risk, there are many habits we can enlarge the expected we are natural with.</p>
+<p>People who age successfully are not just luckyCtheyre motivated to take nursing of themselves. There are many realistic steps we can all take on a daily base to not only add being to our lives, but to also make the most of each and every jiffy. These steps imply mental outlook, diet, problem, catnap, and supplements.</p>
+<p><img alt="" hspace="10" align="left" border="0" src="/upimg/080411/120O31322c03bK.gif" />Top 10 Tips For endurance</p>
+<p>We have just reached the tip of the iceberg, as the remainder of this article will help to further your understanding of this complex subject.</p>
+<p>1. Dont unease, be lucky</p>
+<p>accept the philosophy: Its not what happens to me, its what I make of it. When you go about your day with a activist position, people around you will detect, give you activist comment, and make you feel even better. sentence a satisfying nursinger will also help you vacation lucky, and make you feel motivated to get out of bed each morning.</p>
+<p>People with a dazzling outlook may live longer than those who take a dimmer viewpoint. Researchers in the Netherlands found that adult men and women judged to have optimistic personalities were 77 percent less expected to die of a affection assail, stroke or other cardiovascular origin over the course of a nine-year examine phase than those with pessimistic dispositions. This was regardless of factors such as age, burden, smoking, and whether they had cardiovascular or other lasting diseases at the advantage of the examine.</p>
+<p>According to fresh scientific explore undertaken by the University of California, San Francisco, and reported in the Proceedings of the state Academy of Sciences, stress can ultimately head to a lessen in endurance. lasting psychological stress is associated with accelerated shortening of the caps, called telomeres, on the tops of chromosomes in sallow blood groups. Telomeres shorten with each group replication, and groups terminate isolating when telomeres shorten too greatly.</p>
+<p>As telomeres promote chromosome stability, the squad investigated the idea that psychological stress affects telomere shortening and thus contributes to a lessen in endurance. The examine included 39 vigorous, premenopausal women who were central nursinggivers for a outcome with a lasting illness, with 19 age-matched mothers of vigorous outcomeren as the check group. Stress was unhurried with a standardized questionnaire, and telomere span was unhurried in participants blood samples. inside the nursinggiving group, the longer that a lady had been a nursinggiver, the shorter the span of telomeres. In the 14 women with the record stress scores, telomeres middlingd 3,110 parts in span, while the 14 with the buck stress had telomeres that middlingd 3,660 parts.</p>
+<p>As telomeres shorten by an middling of 31 to 63 parts per year, the scientists estimated that the 550-part shortening in the high-stress group translated to six to 17 additional being of aging.</p>
+<p>2. examine Your heaviness</p>
+<p>harsh calories may do more than help you shed surplus burden. A low calorie diet may also thick age-linked changes in the affections genes that can head to lasting disease. In one examine reported in the Proceedings of the state Academy of Sciences in 2002, inner-aged 14-month-old mice were fed moreover a usual diet or one restricted in calories. When the mice reached 30 months of age, or the equivalent of 90 being of a being life span, the exploreers analyzed their affection hankie. The affections of mice on the low calorie diets showed near 20 percent less age-linked genetic changes and also appeared to have less DNA break than those of mice on repeated diets. Restricting calories also inhibited expectedly disease-causing changes in the immune structure and suppressed apoptosis, or programmed group collapse.</p>
+<p>To achieve endurance, theres no necessary to go on a starvation diet - just be sensitive of warning surplus caloric intake.</p>
+<p>3. Keep Cool</p>
+<p>It appears that cooking at high temperatures starts changes in molecules that may not be right worn by the body, and can start lethal substances inside foods. When promising, eat well-washed, raw, organic fruit and vegetables.</p>
+			</div><!-- /content -->
+			<div class="dede_pages">
+				<ul class="pagelist">
+                    
+				</ul>
+			</div><!-- /pages -->
+			<div class="newdigg" id="newdigg">
+				<div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',22)">
+					<div class="digg_act">顶一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+				<div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',22)">
+					<div class="digg_act">踩一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+			</div>
+			 <script language="javascript" type="text/javascript">getDigg(22);</script>
+			<div class="boxoff">
+				<strong>------分隔线----------------------------</strong>
+			</div>
+			<div class="handle">
+				<div class="context">
+					<ul>
+						<li>pre: <a href='/html/Weight_Loss/20080412/21.html'> Weighty Issues</a> </li>
+						<li>next: <a href='/html/Weight_Loss/20080412/23.html'> Education Helps Healing</a> </li>
+					</ul>
+				</div><!-- /context -->
+				<div class="actbox">
+					<ul>
+						<li id="act-fav"><a href="/plus/stow.php?aid=22" target="_blank">收藏</a></li>
+						<li id="act-err"><a href="/plus/erraddsave.php?aid=22&title= Forever Young" target="_blank">挑错</a></li>
+						<li id="act-pus"><a href="/plus/recommend.php?aid=22" target="_blank">推荐</a></li>
+						<li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li>
+					</ul>
+				</div><!-- /actbox -->
+			</div><!-- /handle -->
+		</div><!-- /viewbox -->
+
+		<div class="mt1">
+			<dl class="tbox">
+				<dt>
+					<strong>最新评论</strong>
+					<span class="more"><a href="/plus/feedback.php?aid=22">查看所有评论</a></span>
+				</dt>
+				<dd>
+					<div class="dede_comment">
+                    <script language='javascript' type='text/javascript' src="/plus/feedback_js.php?aid=22"></script>
+					</div><!-- /dede_comment -->
+				</dd>
+			</dl>
+		</div><!-- /comment -->
+<div class="mt1">
+		<dl class="tbox">
+			<dt>
+				<strong>发表评论</strong>
+				<span class="more"><a href="/plus/feedback.php?aid=22">查看所有评论</a></span>
+			</dt>
+			<dd>
+				<div class="dede_comment_post">
+          <form action="/plus/feedback.php" method="post" name="feedback">
+          <input type="hidden" name="action" value="send" />
+          <input type="hidden" name="comtype" value="comments">
+          <input type="hidden" name="aid" value="22" />
+          <input type="hidden" name="isconfirm" value="yes" />
+                    <div class="dcmp-title">
+						<small>请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论。</small>
+					</div><!-- /dcmp-title -->
+					<div class="dcmp-stand">
+						<strong>评价:</strong>
+							<input type="radio" name="feedbacktype" checked="1" value="feedback" id="dcmp-stand-neu" /><label for="dcmp-stand-neu"><img src="/templets/images/cmt-neu.gif" />中立</label>
+							<input type="radio" name="feedbacktype" value="good" id="dcmp-stand-good" /><label for="dcmp-stand-good"><img src="/templets/images/cmt-good.gif" />好评</label>
+							<input type="radio" name="feedbacktype" value="bad" id="dcmp-stand-bad" /><label for="dcmp-stand-bad"><img src="/templets/images/cmt-bad.gif" />差评</label>
+					</div><!-- /dcmp-stand -->
+					<div class="dcmp-content">
+						<textarea cols="60" name="msg" rows="5" class="ipt-txt"></textarea>
+					</div><!-- /dcmp-content -->
+
+					<div class="dcmp-mood">
+						<strong>表情:</strong>
+						<ul>
+								<li><input type="radio" name='face' value='6' checked="1" /><img src="/templets/images/mood/ico-mood-6.gif" /></li>
+								<li><input type="radio" name='face' value='4'/><img src="/templets/images/mood/ico-mood-4.gif" /></li>
+								<li><input type="radio" name='face' value='3'/><img src="/templets/images/mood/ico-mood-3.gif" /></li>
+								<li><input type="radio" name='face' value='5'/><img src="/templets/images/mood/ico-mood-5.gif" /></li>
+								<li><input type="radio" name='face' value='2'/><img src="/templets/images/mood/ico-mood-2.gif" /></li>
+								<li><input type="radio" name='face' value='1'/><img src="/templets/images/mood/ico-mood-1.gif" /></li>
+								<li><input type="radio" name='face' value='7'/><img src="/templets/images/mood/ico-mood-7.gif" /></li>
+						</ul>
+					</div><!-- /dcmp-mood -->
+					<div class="dcmp-post"><!--未登陆-->
+							<div class="dcmp-userinfo" id="_ajax_feedback">
+								用户名:<input type="text" name="username" size="16" class="ipt-txt" />
+								密码:<input name="pwd" type="password" size="16" class="ipt-txt" />
+								验证码:<input type="text" name="validate" size="4" class="ipt-txt" /><img src="/include/vdimgck.php" />
+                                <input type="checkbox" name="notuser" id="dcmp-submit-guest" /><label for="dcmp-submit-guest"> 匿名? </label>
+							</div>
+                             <script language="javascript" type="text/javascript">CheckLogin();</script>
+							<div class="dcmp-submit">
+								<button type="button" onClick='checkSubmit()'>发表评论</button>
+							</div>
+						</div>
+                    </form>
+				</div><!-- /dede_comment_post -->
+			</dd>
+		</dl>
+	</div>
+
+	</div><!-- /pleft -->
+
+	<div class="pright">
+    	<div class="infos_userinfo">
+ 			
+   	 	</div>
+
+		<div class="commend mt1">
+			<dl class="tbox">
+				<dt><strong>推荐内容</strong></dt>
+				<dd>
+					<ul class="d4">
+           <li><a href="/html/Weight_Loss/20080412/30.html"> Tip the Scales in Your Favour</a>
+            	<p>Tis the period for dieting. January awakens our resolve to consume mean tires, s...</p>
+            </li>
+<li><a href="/html/Weight_Loss/20080412/29.html"> Are You a Skinny, Fat Person?</a>
+            	<p>everybody admires the supermodel who never workings out and eats everywiryg yet ...</p>
+            </li>
+<li><a href="/html/Weight_Loss/20080412/28.html"> Fibre Helps Curb Appetite</a>
+            	<p>eagerness reflects a very knotty structure that has evolved to help humans agree...</p>
+            </li>
+<li><a href="/html/Weight_Loss/20080412/27.html"> Heavy Evidence on Getting Lean</a>
+            	<p>These living the verbalize the newest seek carries little load. In comprehensive...</p>
+            </li>
+<li><a href="/html/Weight_Loss/20080412/26.html"> Monitoring After-Meal Blood Sugar</a>
+            	<p>One of the most important goals in selection people supervise blood sweetie, con...</p>
+            </li>
+<li><a href="/html/Weight_Loss/20080412/25.html"> Key to Weight Loss</a>
+            	<p>trailing credence can be challenging. custody it off can be even more grueling. ...</p>
+            </li>
+
+					</ul>
+				</dd>
+			</dl>
+		</div><!-- /commend -->
+
+		<div class="hot mt1">
+			<dl class="tbox">
+				<dt><strong>热点内容</strong></dt>
+				<dd>
+					<ul class="c1 ico2">
+                    <li><a href="/html/Weight_Loss/20080412/20.html"> Healthy Weight Loss</a></li>
+<li><a href="/html/Weight_Loss/20080412/21.html"> Weighty Issues</a></li>
+<li><a href="/html/Weight_Loss/20080412/22.html"> Forever Young</a></li>
+<li><a href="/html/Weight_Loss/20080412/23.html"> Education Helps Healing</a></li>
+<li><a href="/html/Weight_Loss/20080412/24.html"> Heavy Evidence on Getting Lea</a></li>
+<li><a href="/html/Weight_Loss/20080412/25.html"> Key to Weight Loss</a></li>
+<li><a href="/html/Weight_Loss/20080412/26.html"> Monitoring After-Meal Blood S</a></li>
+<li><a href="/html/Weight_Loss/20080412/27.html"> Heavy Evidence on Getting Lea</a></li>
+<li><a href="/html/Weight_Loss/20080412/28.html"> Fibre Helps Curb Appetite</a></li>
+<li><a href="/html/Weight_Loss/20080412/29.html"> Are You a Skinny, Fat Person?</a></li>
+
+					</ul>
+				</dd>
+			</dl>
+		</div>
+		
+	</div><!-- /pright -->
+</div>
+
+<div class="footer w960 center mt1 clear">
+	<!-- 
+		为了支持织梦团队的发展,请您保留织梦内容管理系统的链接信息.
+		我们对支持织梦团队发展的朋友表示真心的感谢!织梦因您更精彩!
+	-->
+	<p class="powered">
+		Powered by <a href="http://www.dedecms.com" title="织梦内容管理系统(DedeCms)--国内最专业的PHP网站管理系统，轻松建站的首选利器。" target="_blank"><strong>DedeCMS<span>V55_GBK</span></strong></a> &copy; 2004-2009 <a href="http://www.desdev.cn/" target="_blank">DesDev</a> Inc.	</p>
+<!-- /powered -->
+	<p class="copyright">
+		Copyright &copy; 2002-2009 DEDECMS. 织梦科技 版权所有<br />
+  </p>
+</div>
+<!-- /footer -->
+
+</body>
+</html>
