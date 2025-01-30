@@ -1,0 +1,173 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#666666;
+	margin:0 0;
+	line-height: 20px;
+}
+a:link {
+	color: #666666;
+	text-decoration: underline;
+}
+a:visited {
+	text-decoration: underline;
+	color: #666666;
+}
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a:active {
+	text-decoration: underline;
+	color: #666666;
+}
+
+a.cen:link {
+	color: #000000;
+	text-decoration: underline;
+}
+a.cen:visited {
+	text-decoration: underline;
+	color: #000000;
+}
+a.cen:hover {
+	text-decoration: none;
+	color: #000000;
+}
+a.cen:active {
+	text-decoration: underline;
+	color: #000000;
+}
+
+.bai {
+	color:#FFF;
+	font-size: 18px;
+	font-style: italic;
+}
+.bai a:link {
+	color: #FFF;
+	text-decoration: none;
+}
+.bai a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+.bai a:hover {
+	text-decoration: underline;
+	color:#EEE;
+}
+.bai a:active {
+	text-decoration: none;
+	color: #FFF;
+}
+.huang {
+	color:#FF6000;
+	font-size: 18px;
+}
+.huang a:link {
+	color: #FF6000;
+	text-decoration: none;
+}
+.huang a:visited {
+	text-decoration: none;
+	color: #FF6000;
+}
+.huang a:hover {
+	text-decoration: underline;
+	color: #FF6000;
+}
+.huang a:active {
+	text-decoration: none;
+	color: #FF6000 ;
+}
+.huangx {
+	color:#FF6000;
+	font-size: 11px;
+}
+.huangx a:link {
+	color: #FF6000;
+	text-decoration: none;
+}
+.huangx a:visited {
+	text-decoration: none;
+	color: #FF6000;
+}
+.huangx a:hover {
+	text-decoration: underline;
+	color: #FF6000;
+}
+.huangx a:active {
+	text-decoration: none;
+	color: #FF6000 ;
+}
+.huangs {
+	color:#FF6000;
+	font-size: 11px;
+	font-weight: bold;
+}
+.huangs a:link {
+	color: #FF6000;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.huangs a:visited {
+	text-decoration: underline;
+	color: #FF6000;
+	font-weight: bold;
+}
+.huangs a:hover {
+	text-decoration: none;
+	color: #FF6000;
+	font-weight: bold;
+}
+.huangs a:active {
+	text-decoration: underline;
+	color: #FF6000 ;
+	font-weight: bold;
+}
+.hei {
+	color:#000;
+	font-size: 12px;
+	font-weight: bold;
+}
+.hei a:link {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.hei a:visited {
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+.hei a:hover {
+	text-decoration: underline;
+	color: #666;
+	font-weight: bold;
+}
+.hei a:active {
+	text-decoration: none;
+	color: #000 ;
+	font-weight: bold;
+}
+.heib {
+	color:#000;
+	font-size: 18px;
+	font-style: italic;
+}
+.heib a:link {
+	color: #000;
+	text-decoration: none;
+}
+.heib a:visited {
+	text-decoration: none;
+	color: #000;
+}
+.heib a:hover {
+	text-decoration: underline;
+	color: #666;
+}
+.heib a:active {
+	text-decoration: none;
+	color: #000 ;
+}
