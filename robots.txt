@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Crawl-delay: 120
+Sitemap: https://womenshealth.top/sitemap.xml
+Disallow: /cgi-bin/
